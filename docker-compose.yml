@@ -1,0 +1,36 @@
+services:
+  cms-proxy:
+    image: node:24-alpine
+    container_name: cms-proxy
+    working_dir: /app
+    volumes:
+      - .:/app
+    networks:
+      - nginx_network
+    command: npx decap-server -H 0.0.0.0 -p 8081
+    ports:
+      - "8091:8081"
+  eleventy-app:
+    build: .
+    container_name: eleventy-app
+    working_dir: /app
+    command: npm run dev
+    ports:
+      - "8090:8080"   # Browsersync site
+      - "3001:3001"   # Browsersync UI
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    networks:
+      - nginx_network
+    environment:
+      - ELEVENTY_ENV=development
+    # Helpful in dev to keep logs interactive
+    tty: true
+
+networks:
+  nginx_network:
+    external: true
+
+volumes:
+  node_modules:

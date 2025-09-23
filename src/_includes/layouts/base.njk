@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title or site.name }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-900 antialiased">
+  <header class="mx-auto max-w-4xl px-6 py-10">
+    <nav class="flex items-center justify-between">
+      <a href="/" class="text-xl font-semibold">{{ site.name }}</a>
+      <div class="space-x-4">
+        <a href="/" class="hover:underline">Home</a>
+        <a href="/posts/" class="hover:underline">Blog</a>
+        <a href="/admin/" class="hover:underline">CMS</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-4xl px-6 prose">
+    {{ content | safe }}
+  </main>
+
+  <footer class="mx-auto max-w-4xl px-6 py-10">
+    <p class="text-sm text-gray-500">
+      © {% year %} {{ site.name }}.
+    </p>
+  </footer>
+</body>
+</html>

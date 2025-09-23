@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Example: small modern touch */
+.prose a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}

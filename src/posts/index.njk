@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+title: Blog
+pagination:
+  data: collections.posts
+  size: 100
+permalink: "posts/"
+---
+# Blog
+
+<ul>
+{% for post in pagination.items %}
+  <li>
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+    <small>— {{ post.date | date("yyyy-LL-dd") }}</small>
+  </li>
+{% endfor %}
+</ul>

@@ -1,0 +1,5 @@
+{
+  "name": "Eleventy Docker Demo",
+  "description": "Decoupled 11ty site with Tailwind and CMS",
+  "url": "http://localhost:8080"
+}

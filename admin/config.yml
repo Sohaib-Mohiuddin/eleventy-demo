@@ -1,0 +1,18 @@
+local_backend: true   # enables local dev via cms-proxy container
+backend:
+  name: git-gateway     # local dev: git-gateway; for production switch to github/gitlab/bitbucket
+media_folder: "src/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
