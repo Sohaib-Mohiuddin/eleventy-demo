@@ -48,5 +48,21 @@
       © 2025 Eleventy Docker Demo.
     </p>
   </footer>
+
+  <script>
+    (function () {
+      // Only run on Netlify production (optional; remove if you want it locally too)
+      // if (!location.hostname.endsWith('.netlify.app') && location.hostname !== 'your.custom.domain') return;
+
+      // If the URL hash contains Netlify Identity tokens, forward to /auth/ with the same hash.
+      // Netlify Identity uses these common hash parameters:
+      //   #invite_token=..., #recovery_token=..., #confirmation_token=..., #access_token=...
+      var h = (location.hash || '').toLowerCase();
+      if (/#(invite_token|recovery_token|confirmation_token|access_token)=/.test(h)) {
+        // Preserve the entire hash so the /auth page can process it
+        location.replace('/auth/' + location.hash);
+      }
+    })();
+  </script>
 </body>
 </html>
