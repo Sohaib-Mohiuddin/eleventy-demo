@@ -3,9 +3,7 @@ layout: layouts/base.njk
 title: Home
 ---
 
-# Welcome
-
----
+<h1>Welcome</h1>
 
 This is an Eleventy ***site*** served from a Docker container.  
 Use the **CMS** link in the nav to add posts.
