@@ -10,15 +10,18 @@ module.exports = (eleventyConfig) => {
     // Watch Tailwind interim output so Browsersync reloads when CSS changes
     eleventyConfig.addWatchTarget("src/assets/styles.css");
 
+    // ⬅️ Make /admin available at http://localhost:8090/admin/
+    eleventyConfig.addPassthroughCopy({ "admin": "admin" });
+
     // Copy final CSS into the output dir (written by postcss step)
     eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+
+    // If you upload images through CMS:
+    eleventyConfig.addPassthroughCopy({ "src/images": "assets/images" });
 
     eleventyConfig.setBrowserSyncConfig({
         files: 'src/assets/*.css',
     });
-
-    // ⬅️ Make /admin available at http://localhost:8090/admin/
-    eleventyConfig.addPassthroughCopy({ "admin": "admin" });
 
     // Copy static assets if you add any later, e.g. images/
     // eleventyConfig.addPassthroughCopy({ "src/images": "assets/images" });

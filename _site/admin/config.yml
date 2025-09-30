@@ -1,8 +1,16 @@
-local_backend: true
-  # url: http://cms-proxy:8081/   # enables local dev via cms-proxy container
+local_backend:
+  url: http://cms-proxy:8081/   # enables local dev via cms-proxy container
+  # url: http://localhost:8081/   # enables local dev via cms-proxy container
 backend:
-  name: proxy     # local dev: git-gateway; for production switch to github/gitlab/bitbucket
-  proxy_url: http://cms-proxy:8081/   # enables local dev via cms-proxy container
+  # -------- Local Dev Start -------- 
+  # name: proxy     # local dev: git-gateway; for production switch to github/gitlab/bitbucket
+  # proxy_url: http://cms-proxy:8081/   # enables local dev via cms-proxy container
+  # -------- Local Dev End --------
+
+  # -------- Production Start --------
+  name: git-gateway
+  branch: main                # publishing branch
+  # -------- Production End --------
 media_folder: "src/images"
 public_folder: "/assets/images"
 
