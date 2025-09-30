@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight"); // optional: code highlighting
 
 module.exports = (eleventyConfig) => {
     eleventyConfig.setServerOptions({
@@ -52,6 +53,8 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addCollection("posts", (collectionApi) =>
         collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => b.date - a.date)
     );
+
+    eleventyConfig.addPlugin(syntaxHighlight);
 
     return {
         dir: { input: "src", includes: "_includes", data: "_data", output: "_site" },
