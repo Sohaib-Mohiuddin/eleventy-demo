@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="mx-auto max-w-3xl">
+  {% if image %}
+    <figure class="mb-6">
+        <div class="aspect-[16/9] overflow-hidden rounded-xl bg-gray-100">
+            <img src="{{ image }}" alt="{{ title | safe }}" class="w-full h-full object-cover" />
+        </div>
+    </figure>
+    {% endif %}
+
+  <header class="mb-4">
+    <h1 class="text-3xl font-bold mb-1">{{ title }}</h1>
+    <p class="text-sm text-gray-500">Published {{ date | date("yyyy-LL-dd") }}</p>
+  </header>
+
+  <div class="prose prose-zinc lg:prose-lg">
+    {{ content | safe }}
+  </div>
+</article>

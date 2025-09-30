@@ -7,13 +7,54 @@ pagination:
 permalink: "posts/"
 ---
 
-<h1>Blog</h1>
+<h1 class="mb-5 text-3xl font-bold tracking-tight">Blog</h1>
 
-<ul>
-{% for post in pagination.items %}
-  <li>
-    <a href="{{ post.url }}">{{ post.data.title }}</a>
-    <small>— {{ post.date | date("yyyy-LL-dd") }}</small>
-  </li>
-{% endfor %}
-</ul>
+<!-- prevent global prose from styling the grid -->
+<div class="not-prose">
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {% for post in pagination.items %}
+      {% set thumb = post.data.image or "/assets/images/default-post.jpg" %}
+      <article
+        class="group bg-white rounded-xl border border-gray-200/80 shadow-sm overflow-hidden
+               hover:shadow-md hover:border-gray-300 transition">
+        <a href="{{ post.url }}" class="block h-full">
+          <div class="aspect-[16/9] bg-gray-100 overflow-hidden">
+            <img
+              src="{{ thumb }}"
+              alt="{{ post.data.title | safe }}"
+              class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+              loading="lazy" decoding="async" />
+          </div>
+
+          <div class="p-4 space-y-2">
+            <h2 class="text-base font-semibold leading-snug">
+              <span class="underline decoration-transparent group-hover:decoration-gray-400">
+                {{ post.data.title }}
+              </span>
+            </h2>
+
+            <p class="text-xs text-gray-500">
+              Published {{ post.date | date("yyyy-LL-dd") }}
+            </p>
+
+            {% set preview = post.data.description or (post.templateContent | excerpt(140)) %}
+            {% if preview %}
+              <p class="text-sm text-gray-700 line-clamp-2">{{ preview }}</p>
+            {% endif %}
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</div>
+
+{% if pagination.pages > 1 %}
+  <nav class="mt-10 flex justify-center space-x-4">
+    {% if pagination.pageNumber > 0 %}
+      <a href="{{ pagination.hrefs[pagination.pageNumber - 1] }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Previous</a>
+    {% endif %}
+    {% if pagination.pageNumber + 1 < pagination.pages %}
+      <a href="{{ pagination.hrefs[pagination.pageNumber + 1] }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Next</a>
+    {% endif %}
+  </nav>
+{% endif %}

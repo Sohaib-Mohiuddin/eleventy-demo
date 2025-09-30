@@ -56,6 +56,12 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addPlugin(syntaxHighlight);
 
+    eleventyConfig.addFilter("excerpt", (content = "", n = 160) => {
+        const text = String(content).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+        return text.length > n ? text.slice(0, n).trimEnd() + "…" : text;
+    });
+
+
     return {
         dir: { input: "src", includes: "_includes", data: "_data", output: "_site" },
         markdownTemplateEngine: "njk",

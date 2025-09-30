@@ -19,29 +19,117 @@
     </nav>
   </header>
 
-  <main class="mx-auto max-w-3xl px-6 prose prose-zinc lg:prose-lg">
+  <main class="mx-auto max-w-6xl px-6 py-8">
+    <div class="prose prose-zinc lg:prose-lg">
+      
+<h1 class="mb-5 text-3xl font-bold tracking-tight">Blog</h1>
+
+<!-- prevent global prose from styling the grid -->
+<div class="not-prose">
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     
-<h1>Blog</h1>
+      
+      <article
+        class="group bg-white rounded-xl border border-gray-200/80 shadow-sm overflow-hidden
+               hover:shadow-md hover:border-gray-300 transition">
+        <a href="/posts/third-post/" class="block h-full">
+          <div class="aspect-[16/9] bg-gray-100 overflow-hidden">
+            <img
+              src="/assets/images/default.png"
+              alt="Third Post"
+              class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+              loading="lazy" decoding="async" />
+          </div>
 
-<ul>
+          <div class="p-4 space-y-2">
+            <h2 class="text-base font-semibold leading-snug">
+              <span class="underline decoration-transparent group-hover:decoration-gray-400">
+                Third Post
+              </span>
+            </h2>
 
-  <li>
-    <a href="/posts/third-post/">Third Post</a>
-    <small>— 2025-09-23</small>
-  </li>
+            <p class="text-xs text-gray-500">
+              Published 2025-09-23
+            </p>
 
-  <li>
-    <a href="/posts/second-post/">Second Post</a>
-    <small>— 2025-09-22</small>
-  </li>
+            
+            
+              <p class="text-sm text-gray-700 line-clamp-2">Third post</p>
+            
+          </div>
+        </a>
+      </article>
+    
+      
+      <article
+        class="group bg-white rounded-xl border border-gray-200/80 shadow-sm overflow-hidden
+               hover:shadow-md hover:border-gray-300 transition">
+        <a href="/posts/second-post/" class="block h-full">
+          <div class="aspect-[16/9] bg-gray-100 overflow-hidden">
+            <img
+              src="/assets/images/default.png"
+              alt="Second Post"
+              class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+              loading="lazy" decoding="async" />
+          </div>
 
-  <li>
-    <a href="/posts/hello-world/">Hello World</a>
-    <small>— 2025-09-17</small>
-  </li>
+          <div class="p-4 space-y-2">
+            <h2 class="text-base font-semibold leading-snug">
+              <span class="underline decoration-transparent group-hover:decoration-gray-400">
+                Second Post
+              </span>
+            </h2>
 
-</ul>
+            <p class="text-xs text-gray-500">
+              Published 2025-09-22
+            </p>
 
+            
+            
+              <p class="text-sm text-gray-700 line-clamp-2">Second post</p>
+            
+          </div>
+        </a>
+      </article>
+    
+      
+      <article
+        class="group bg-white rounded-xl border border-gray-200/80 shadow-sm overflow-hidden
+               hover:shadow-md hover:border-gray-300 transition">
+        <a href="/posts/hello-world/" class="block h-full">
+          <div class="aspect-[16/9] bg-gray-100 overflow-hidden">
+            <img
+              src="/assets/images/default.png"
+              alt="Hello World"
+              class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+              loading="lazy" decoding="async" />
+          </div>
+
+          <div class="p-4 space-y-2">
+            <h2 class="text-base font-semibold leading-snug">
+              <span class="underline decoration-transparent group-hover:decoration-gray-400">
+                Hello World
+              </span>
+            </h2>
+
+            <p class="text-xs text-gray-500">
+              Published 2025-09-17
+            </p>
+
+            
+            
+              <p class="text-sm text-gray-700 line-clamp-2">First post</p>
+            
+          </div>
+        </a>
+      </article>
+    
+  </div>
+</div>
+
+
+
+    </div>
   </main>
 
   <footer class="mx-auto max-w-4xl px-6 py-10">
