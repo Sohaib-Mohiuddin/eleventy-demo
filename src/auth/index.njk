@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Authenticating…</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  </head>
+  <body>
+    <!-- Load the Identity widget ONLY here -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      // Let the widget initialize and process the token in the hash
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', () => {
+          // After processing (invite/recovery/confirmation), send to CMS
+          // Give it a small delay to finish token handling
+          setTimeout(() => { window.location.replace('/admin/'); }, 800);
+        });
+      }
+    </script>
+    <noscript>Redirecting…</noscript>
+  </body>
+</html>
