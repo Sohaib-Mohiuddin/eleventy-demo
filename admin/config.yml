@@ -2,13 +2,13 @@ local_backend: true
   # url: http://localhost:8081/   # enables local dev via cms-proxy container
 backend:
   # -------- Local Dev Start -------- 
-  name: proxy     # local dev: git-gateway; for production switch to github/gitlab/bitbucket
-  proxy_url: http://localhost:8081/   # enables local dev via cms-proxy container
+  # name: proxy     # local dev: git-gateway; for production switch to github/gitlab/bitbucket
+  # proxy_url: http://localhost:8081/   # enables local dev via cms-proxy container
   # -------- Local Dev End --------
 
   # -------- Production Start --------
-  # name: git-gateway
-  # branch: main                # publishing branch
+  name: git-gateway
+  branch: main                # publishing branch
   # -------- Production End --------
 media_folder: "src/images"
 public_folder: "/assets/images"
@@ -24,5 +24,5 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - { label: "Thumbnail (optional)", name: "image", widget: "image", required: false }
+      - {label: "Thumbnail (optional)", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}

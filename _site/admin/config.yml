@@ -1,10 +1,9 @@
-local_backend:
-  url: http://cms-proxy:8081/   # enables local dev via cms-proxy container
+local_backend: true
   # url: http://localhost:8081/   # enables local dev via cms-proxy container
 backend:
   # -------- Local Dev Start -------- 
   # name: proxy     # local dev: git-gateway; for production switch to github/gitlab/bitbucket
-  # proxy_url: http://cms-proxy:8081/   # enables local dev via cms-proxy container
+  # proxy_url: http://localhost:8081/   # enables local dev via cms-proxy container
   # -------- Local Dev End --------
 
   # -------- Production Start --------
@@ -25,5 +24,5 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - { label: "Thumbnail (optional)", name: "image", widget: "image", required: false }
+      - {label: "Thumbnail (optional)", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
