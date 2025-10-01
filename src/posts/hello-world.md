@@ -1,9 +1,9 @@
 ---
 title: Hello World
-description: First post
 date: 2025-09-17
+description: First post
 layout: layouts/base.njk
-image: /assets/images/default.png   # (optional; CMS fills this)
-permalink: "posts/hello-world/"
+image: /assets/images/dev-black.jpg
+permalink: posts/hello-world/
 ---
 This is your first post. Routing uses a clean permalink (`/posts/hello-world/`).
