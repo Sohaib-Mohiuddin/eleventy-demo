@@ -1,9 +1,9 @@
 ---
-title: Second Post
-description: Second post
+title: Some Random Change Post
 date: 2025-09-22
+description: Second post
 layout: layouts/base.njk
-image: /assets/images/default.png   # (optional; CMS fills this)
-permalink: "posts/second-post/"
+image: /assets/images/default.png
+permalink: posts/second-post/
 ---
 This is your second post. Routing uses a clean permalink (`/posts/second-post/`).
