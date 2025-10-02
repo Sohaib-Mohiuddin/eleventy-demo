@@ -17,7 +17,7 @@ RUN npm install --force
 COPY . .
 
 # Eleventy will serve on 8080; Browsersync UI on 3001
-EXPOSE 8080 3001
+EXPOSE 8080
 
 # Default: development server (overridden by docker-compose for dev)
 CMD ["npm","run","dev"]
